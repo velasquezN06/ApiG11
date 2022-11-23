@@ -25,4 +25,19 @@ public class UsuarioServicio {
     public Optional<UsuarioModelo> consultaDocumento(Long documento){
         return repositorio.findById(documento);
     }
+
+    public boolean eliminarUsuario(Long documento){
+        if(repositorio.existsById(documento)){
+            repositorio.deleteById(documento);
+            return true;
+        }
+        else{
+            return false;
+        }
+       
+    }
+
+    public ArrayList<UsuarioModelo> buscaXcorreo(String correo){
+        return repositorio.findByCorreo(correo);
+    }
 }
