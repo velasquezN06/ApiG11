@@ -37,7 +37,7 @@ public class UsuarioServicio {
        
     }
 
-    public ArrayList<UsuarioModelo> buscaXcorreo(String correo){
+    public ArrayList<UsuarioModelo> buscaxcorreo(String correo){
         return repositorio.findByCorreo(correo);
     }
 }

@@ -19,32 +19,32 @@ import com.example.ApiG11.Servicios.UsuarioServicio;
 @RequestMapping("/usuario")
 @CrossOrigin("*")
 public class UsuarioControlador {
-    
+
     @Autowired
     UsuarioServicio servicio;
 
     @PostMapping("/guardar")
-    public UsuarioModelo guardar(@RequestBody UsuarioModelo usuario){
+    public UsuarioModelo guardar(@RequestBody UsuarioModelo usuario) {
         return servicio.GuardarUsuario(usuario);
     }
 
     @GetMapping("/consultar")
-    public ArrayList<UsuarioModelo> consultarUsuario(){
+    public ArrayList<UsuarioModelo> consultarUsuario() {
         return servicio.consultarUsuarios();
     }
 
     @GetMapping("/consultaDocumento/{documento}")
-    public Optional<UsuarioModelo>consultaDocumento(@PathVariable("documento") Long documento){
+    public Optional<UsuarioModelo> consultaDocumento(@PathVariable("documento") Long documento) {
         return servicio.consultaDocumento(documento);
     }
 
     @DeleteMapping("/borrar/{documento}")
-    public boolean eliminarUsuario(@PathVariable("documento") Long documento){
+    public boolean eliminarUsuario(@PathVariable("documento") Long documento) {
         return servicio.eliminarUsuario(documento);
     }
 
     @GetMapping("/buscaxcorreo/{correo}")
-    public ArrayList<UsuarioModelo> buscaxcorreo(@PathVariable("correo") String correo){
-        return servicio.buscaXcorreo(correo);
+    public ArrayList<UsuarioModelo> buscaxcorreo(@PathVariable("correo") String correo) {
+        return servicio.buscaxcorreo(correo);
     }
 }
